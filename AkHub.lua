@@ -9,14 +9,8 @@ local NavigationFrame = Instance.new("Frame")
 local BloxFruitsButton = Instance.new("TextButton")
 local FishButton = Instance.new("TextButton")
 local OtherButton = Instance.new("TextButton")
-local BloxFruitsMenu = Instance.new("Frame")
-local FishMenu = Instance.new("Frame")
-local OtherMenu = Instance.new("Frame")
 local DiscordButton = Instance.new("TextButton")
 local GithubButton = Instance.new("TextButton")
-local BloxFruitsOptions = {"Main", "Farm", "Sea", "Raid", "Fruit", "Status", "Stat", "Quest", "Shop"}
-local FishOptions = {"Main", "Farm", "Island", "Shop", "Status"}
-local OtherOptions = {"Misc"}
 
 -- Initialisation de ScreenGui
 ScreenGui.Name = "AkHub"
@@ -65,9 +59,7 @@ CloseButton.Position = UDim2.new(1, -40, 0, 0)
 CloseButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 CloseButton.BorderSizePixel = 0
 CloseButton.MouseButton1Click:Connect(function()
-    local confirmation = Instance.new("MessageDialog")
-    confirmation.Message = "Êtes-vous sûr de vouloir fermer ?"
-    confirmation.Parent = game.CoreGui
+    ScreenGui:Destroy() -- Ferme l'interface
 end)
 
 -- Bouton réduire
@@ -124,15 +116,6 @@ OtherButton.Size = UDim2.new(1, 0, 0, 40)
 OtherButton.Position = UDim2.new(0, 0, 0, 80)
 OtherButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 
--- Menu déroulant pour BloxFruit
-BloxFruitsMenu.Parent = Frame
-BloxFruitsMenu.Size = UDim2.new(0, 250, 0, 0)
-BloxFruitsMenu.Position = UDim2.new(0, 150, 0, 40)
-BloxFruitsMenu.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-BloxFruitsMenu.Visible = false
-
--- Répéter pour FishMenu et OtherMenu, puis gérer les sous-menus déroulants.
-
 -- Discord et GitHub boutons
 DiscordButton.Parent = Frame
 DiscordButton.Text = "Discord"
@@ -151,3 +134,4 @@ GithubButton.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
 GithubButton.MouseButton1Click:Connect(function()
     setclipboard("https://github.com/Akays-dsc/DeltaScripts")
 end)
+
